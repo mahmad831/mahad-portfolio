@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahad Ahmad | AI Consultant & ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+        
+        :root {
+            --neon-blue: #0ff0fc;
+            --neon-purple: #bc13fe;
+            --neon-green: #00ff41;
+            --dark-bg: #0a0a0a;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, .nav-item {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--neon-purple);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--neon-green);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim-2 2s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(32px, 9999px, 28px, 0); }
+            10% { clip: rect(13px, 9999px, 37px, 0); }
+            20% { clip: rect(45px, 9999px, 33px, 0); }
+            30% { clip: rect(31px, 9999px, 94px, 0); }
+            40% { clip: rect(88px, 9999px, 98px, 0); }
+            50% { clip: rect(9px, 9999px, 98px, 0); }
+            60% { clip: rect(37px, 9999px, 17px, 0); }
+            70% { clip: rect(77px, 9999px, 34px, 0); }
+            80% { clip: rect(55px, 9999px, 49px, 0); }
+            90% { clip: rect(10px, 9999px, 2px, 0); }
+            100% { clip: rect(35px, 9999px, 53px, 0); }
+        }
+        
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(65px, 9999px, 119px, 0); }
+            10% { clip: rect(79px, 9999px, 66px, 0); }
+            20% { clip: rect(101px, 9999px, 80px, 0); }
+            30% { clip: rect(100px, 9999px, 16px, 0); }
+            40% { clip: rect(40px, 9999px, 45px, 0); }
+            50% { clip: rect(124px, 9999px, 23px, 0); }
+            60% { clip: rect(15px, 9999px, 14px, 0); }
+            70% { clip: rect(90px, 9999px, 10px, 0); }
+            80% { clip: rect(70px, 9999px, 5px, 0); }
+            90% { clip: rect(6px, 9999px, 99px, 0); }
+            100% { clip: rect(30px, 9999px, 68px, 0); }
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), 0 0 15px var(--neon-blue);
+        }
+        
+        .neon-border {
+            box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), inset 0 0 5px var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+        }
+        
+        .neon-button {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .neon-button:hover {
+            box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+            transform: translateY(-2px);
+        }
+        
+        .neon-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(15, 240, 252, 0.4), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .neon-button:hover::before {
+            left: 100%;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-item:hover::after {
+            width: 100%;
+        }
+        
+        .profile-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent 70%, rgba(15, 240, 252, 0.1));
+            animation: scanline 6s linear infinite;
+        }
+        
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        
+        .progress-ring-circle {
+            stroke-dasharray: 251.2;
+            stroke-dashoffset: 251.2;
+            transition: stroke-dashoffset 1s ease;
+            stroke-linecap: round;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--neon-blue);
+            box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--neon-blue);
+        }
+        
+        .matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="10" y="20" font-family="monospace" font-size="12" fill="rgba(0,255,65,0.1)">0</text><text x="30" y="45" font-family="monospace" font-size="12" fill="rgba(0,255,65,0.1)">1</text><text x="50" y="70" font-family="monospace" font-size="12" fill="rgba(0,255,65,0.1)">0</text><text x="70" y="30" font-family="monospace" font-size="12" fill="rgba(0,255,65,0.1)">1</text></svg>');
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px var(--neon-purple), 0 0 30px var(--neon-purple);
+        }
+        
+        .terminal {
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+        
+        .terminal::before {
+            content: '>';
+            position: absolute;
+            left: 10px;
+            color: var(--neon-green);
+        }
+        
+        .terminal-text {
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid var(--neon-green);
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--neon-green) }
+        }
+        
+        .holographic-card {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(15, 240, 252, 0.3);
+            box-shadow: 0 0 20px rgba(15, 240, 252, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .holographic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(15, 240, 252, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Matrix Background -->
+    <div class="matrix-bg fixed inset-0 z-0"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="glitch text-2xl font-bold" data-text="MAHAD AHMAD">
+                    <span class="text-white">MAHAD AHMAD</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-item text-white hover:text-neon-blue transition">HOME</a>
+                    <a href="#about" class="nav-item text-white hover:text-neon-blue transition">ABOUT</a>
+                    <a href="#skills" class="nav-item text-white hover:text-neon-blue transition">SKILLS</a>
+                    <a href="#experience" class="nav-item text-white hover:text-neon-blue transition">EXPERIENCE</a>
+                    <a href="#projects" class="nav-item text-white hover:text-neon-blue transition">PROJECTS</a>
+                    <a href="#contact" class="nav-item text-white hover:text-neon-blue transition">CONTACT</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+        </div>
+        <div class="container mx-auto px-6 z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="glitch text-4xl md:text-6xl font-bold mb-6" data-text="I Help Businesses Automate Tasks & Boost Revenue with AI & Data">
+                        <span class="text-white">I Help Businesses Automate Tasks & Boost Revenue with AI & Data</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-medium mb-8 neon-text">AI Consultant | Machine Learning Engineer</h2>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="neon-button bg-black text-white px-6 py-3 rounded border border-neon-blue font-medium">View Resume</a>
+                        <a href="#contact" class="neon-button bg-black text-white px-6 py-3 rounded border border-neon-purple font-medium">Contact Me</a>
+                        <a href="https://linkedin.com/in/mahad-ahmad-4351a3249" target="_blank" class="neon-button bg-black text-white px-6 py-3 rounded border border-neon-green font-medium">Visit LinkedIn</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 rounded-full bg-neon-blue opacity-20 blur-xl animate-pulse"></div>
+                        <div class="profile-img relative w-full h-full rounded-full overflow-hidden border-4 border-neon-blue">
+                            <img src="https://via.placeholder.com/400x400" alt="Mahad Ahmad" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl font-bold mb-16 text-center neon-text">ABOUT ME</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="relative w-64 h-64">
+                        <div class="absolute inset-0 rounded-full bg-neon-purple opacity-20 blur-xl animate-pulse"></div>
+                        <div class="profile-img relative w-full h-full rounded-full overflow-hidden border-4 border-neon-purple">
+                            <img src="https://via.placeholder.com/400x400" alt="Mahad Ahmad" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-lg md:text-xl mb-6 leading-relaxed">
+                        I'm Mahad Ahmad, a Computer Science graduate with deep experience in AI, ML, and data automation. I craft smart, scalable solutions using Python, data science, and automation to drive growth and efficiency.
+                    </p>
+                    <p class="text-lg md:text-xl mb-6 leading-relaxed">
+                        My expertise spans across machine learning model development, data analysis pipelines, and AI-powered automation systems. I'm passionate about transforming complex data into actionable insights and creating intelligent systems that enhance business operations.
+                    </p>
+                    <p class="text-lg md:text-xl leading-relaxed">
+                        With a strong foundation in computer science and hands-on experience across various industries, I bridge the gap between technical implementation and business objectives to deliver measurable results.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-black bg-opacity-50 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl font-bold mb-16 text-center neon-text">SKILLS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- AI/ML Skills -->
+                <div class="holographic-card p-6 rounded-lg">
+                    <h3 class="text-xl md:text-2xl font-bold mb-6 text-neon-blue flex items-center">
+                        <i class="fas fa-robot mr-3"></i> AI/ML
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">PyTorch</span>
+                                <span class="text-neon-green">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-blue h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">TensorFlow</span>
+                                <span class="text-neon-green">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-blue h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Hugging Face</span>
+                                <span class="text-neon-green">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-blue h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">AutoGen</span>
+                                <span class="text-neon-green">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-blue h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Skills -->
+                <div class="holographic-card p-6 rounded-lg">
+                    <h3 class="text-xl md:text-2xl font-bold mb-6 text-neon-purple flex items-center">
+                        <i class="fas fa-database mr-3"></i> Data
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">SQL</span>
+                                <span class="text-neon-green">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-purple h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Power BI</span>
+                                <span class="text-neon-green">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-purple h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Tableau</span>
+                                <span class="text-neon-green">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-purple h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Pandas/NumPy</span>
+                                <span class="text-neon-green">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-purple h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dev Tools -->
+                <div class="holographic-card p-6 rounded-lg">
+                    <h3 class="text-xl md:text-2xl font-bold mb-6 text-neon-green flex items-center">
+                        <i class="fas fa-code mr-3"></i> Dev Tools
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Python</span>
+                                <span class="text-neon-green">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-green h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">GitHub</span>
+                                <span class="text-neon-green">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-green h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">OpenAI API</span>
+                                <span class="text-neon-green">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-green h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">PDFLib</span>
+                                <span class="text-neon-green">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-neon-green h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl font-bold mb-16 text-center neon-text">EXPERIENCE</h2>
+            <div class="relative pl-8 timeline">
+                <!-- Salahuddin Softtech Solutions -->
+                <div class="mb-12 pl-8 relative timeline-item">
+                    <div class="holographic-card p-6 rounded-lg">
+                        <h3 class="text-xl md:text-2xl font-bold text-neon-blue mb-2">AI Software Engineer</h3>
+                        <h4 class="text-lg md:text-xl font-medium text-neon-purple mb-4">Salahuddin Softtech Solutions</h4>
+                        <p class="mb-4">Developed and deployed machine learning models for various business applications, focusing on automation and efficiency improvements.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Python</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">TensorFlow</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Data Pipelines</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AL Mersa Trading W.L.L -->
+                <div class="mb-12 pl-8 relative timeline-item">
+                    <div class="holographic-card p-6 rounded-lg">
+                        <h3 class="text-xl md:text-2xl font-bold text-neon-blue mb-2">Data Analyst</h3>
+                        <h4 class="text-lg md:text-xl font-medium text-neon-purple mb-4">AL Mersa Trading W.L.L</h4>
+                        <p class="mb-4">Transformed raw business data into actionable insights through advanced analytics and visualization, driving strategic decision-making.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">SQL</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Power BI</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Data Visualization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scraperrs -->
+                <div class="mb-12 pl-8 relative timeline-item">
+                    <div class="holographic-card p-6 rounded-lg">
+                        <h3 class="text-xl md:text-2xl font-bold text-neon-blue mb-2">Python Developer</h3>
+                        <h4 class="text-lg md:text-xl font-medium text-neon-purple mb-4">Scraperrs</h4>
+                        <p class="mb-4">Built web scraping solutions and automation tools to collect and process large datasets from various online sources.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Web Scraping</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Automation</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">BeautifulSoup</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TriVA Global -->
+                <div class="mb-12 pl-8 relative timeline-item">
+                    <div class="holographic-card p-6 rounded-lg">
+                        <h3 class="text-xl md:text-2xl font-bold text-neon-blue mb-2">Prompt Engineer</h3>
+                        <h4 class="text-lg md:text-xl font-medium text-neon-purple mb-4">TriVA Global</h4>
+                        <p class="mb-4">Specialized in designing and optimizing prompts for large language models to improve output quality and relevance for various applications.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">LLMs</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Prompt Design</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">OpenAI API</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Infinity Warriors -->
+                <div class="mb-12 pl-8 relative timeline-item">
+                    <div class="holographic-card p-6 rounded-lg">
+                        <h3 class="text-xl md:text-2xl font-bold text-neon-blue mb-2">Product Predictive Modelist</h3>
+                        <h4 class="text-lg md:text-xl font-medium text-neon-purple mb-4">Infinity Warriors</h4>
+                        <p class="mb-4">Developed predictive models to forecast product demand and optimize inventory management, reducing waste and improving profitability.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Time Series</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Forecasting</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">PyTorch</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HubSol Technologies -->
+                <div class="mb-12 pl-8 relative timeline-item">
+                    <div class="holographic-card p-6 rounded-lg">
+                        <h3 class="text-xl md:text-2xl font-bold text-neon-blue mb-2">ML Engineer</h3>
+                        <h4 class="text-lg md:text-xl font-medium text-neon-purple mb-4">HubSol Technologies</h4>
+                        <p class="mb-4">Implemented end-to-end machine learning solutions from data collection to model deployment in production environments.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">MLOps</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Model Deployment</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-black bg-opacity-50 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl font-bold mb-16 text-center neon-text">CERTIFICATIONS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- AI Agentic Design Patterns with AutoGen -->
+                <div class="holographic-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-neon-blue bg-opacity-20 flex items-center justify-center mr-4">
+                            <i class="fas fa-certificate text-2xl text-neon-blue"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neon-blue">AI Agentic Design Patterns with AutoGen</h3>
+                    </div>
+                    <p class="mb-4">Advanced certification in designing autonomous AI agents using AutoGen framework for complex problem-solving.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-400">Issued: 2023</span>
+                        <a href="#" class="text-neon-purple hover:underline">View Credential</a>
+                    </div>
+                </div>
+                
+                <!-- GDSC Lead -->
+                <div class="holographic-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-neon-purple bg-opacity-20 flex items-center justify-center mr-4">
+                            <i class="fas fa-certificate text-2xl text-neon-purple"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neon-purple">GDSC Lead</h3>
+                    </div>
+                    <p class="mb-4">Google Developer Student Clubs Lead certification, recognizing leadership in developer communities and technical education.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-400">Issued: 2022</span>
+                        <a href="#" class="text-neon-blue hover:underline">View Credential</a>
+                    </div>
+                </div>
+                
+                <!-- SQL Certifications -->
+                <div class="holographic-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-neon-green bg-opacity-20 flex items-center justify-center mr-4">
+                            <i class="fas fa-certificate text-2xl text-neon-green"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neon-green">SQL (Intermediate & Basic)</h3>
+                    </div>
+                    <p class="mb-4">Certified in both intermediate and basic SQL, demonstrating proficiency in database querying and management.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-400">Issued: 2021</span>
+                        <a href="#" class="text-neon-purple hover:underline">View Credential</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl font-bold mb-16 text-center neon-text">EDUCATION</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="holographic-card p-8 rounded-lg">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                            <div class="w-32 h-32 rounded-full bg-neon-blue bg-opacity-20 flex items-center justify-center border-4 border-neon-blue">
+                                <i class="fas fa-graduation-cap text-4xl text-neon-blue"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 md:pl-8">
+                            <h3 class="text-2xl font-bold text-neon-blue mb-2">Bachelor's in Computer Science</h3>
+                            <h4 class="text-xl font-medium text-neon-purple mb-4">NCBA&E (2020–2024)</h4>
+                            <p class="mb-4">Comprehensive education in computer science fundamentals with specialization in artificial intelligence and data science.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Machine Learning</span>
+                                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Data Structures</span>
+                                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-black bg-opacity-50 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl font-bold mb-16 text-center neon-text">PROJECTS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- LLaMA + OpenAI chatbot -->
+                <div class="holographic-card rounded-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center">
+                        <i class="fas fa-robot text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neon-blue mb-2">LLaMA + OpenAI chatbot for ICIEC</h3>
+                        <p class="mb-4">Developed a hybrid chatbot solution combining LLaMA and OpenAI models for enhanced financial advisory services.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">LLMs</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">Chatbot</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-blue">NLP</span>
+                        </div>
+                        <a href="#" class="text-neon-purple hover:underline flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Automated sales and inventory pipelines -->
+                <div class="holographic-card rounded-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-neon-purple to-neon-green flex items-center justify-center">
+                        <i class="fas fa-cogs text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neon-purple mb-2">Automated sales and inventory pipelines</h3>
+                        <p class="mb-4">Created automated data pipelines for real-time sales tracking and inventory management with predictive analytics.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-purple">Automation</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-purple">ETL</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-purple">Data Pipelines</span>
+                        </div>
+                        <a href="#" class="text-neon-blue hover:underline flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Predictive modeling for ecommerce -->
+                <div class="holographic-card rounded-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-neon-green to-neon-blue flex items-center justify-center">
+                        <i class="fas fa-chart-line text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neon-green mb-2">Predictive modeling for ecommerce</h3>
+                        <p class="mb-4">Built machine learning models to predict customer behavior and optimize marketing strategies for ecommerce platforms.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-green">Predictive Analytics</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-green">Customer Segmentation</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-neon-green">Scikit-learn</span>
+                        </div>
+                        <a href="#" class="text-neon-purple hover:underline flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://github.com/mahmad831" target="_blank" class="neon-button inline-block bg-black text-white px-6 py-3 rounded border border-neon-green font-medium">
+                    <i class="fab fa-github mr-2"></i> View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl font-bold mb-16 text-center neon-text">CONTACT</h2>
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neon-blue mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full bg-gray-900 border border-neon-blue rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-neon-blue" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-neon-blue mb-2">Your Email</label>
+                            <input type="email" id="email" class="w-full bg-gray-900 border border-neon-blue rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-neon-blue" placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-neon-blue mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full bg-gray-900 border border-neon-blue rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-neon-blue" placeholder="Enter subject">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neon-blue mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full bg-gray-900 border border-neon-blue rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-neon-blue" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="neon-button w-full bg-black text-white px-6 py-3 rounded border border-neon-blue font-medium">Send Message</button>
+                    </form>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Phone -->
+                        <div class="contact-card p-6 rounded-lg bg-gray-900 border border-neon-blue">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-neon-blue bg-opacity-20 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-xl text-neon-blue"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-neon-blue">Phone</h3>
+                            </div>
+                            <a href="tel:0097332369954" class="text-white hover:text-neon-purple">00973 3236 9954</a>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="contact-card p-6 rounded-lg bg-gray-900 border border-neon-purple">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-neon-purple bg-opacity-20 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-xl text-neon-purple"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-neon-purple">Email</h3>
+                            </div>
+                            <a href="mailto:mahadahmad832@gmail.com" class="text-white hover:text-neon-blue">mahadahmad832@gmail.com</a>
+                        </div>
+                        
+                        <!-- LinkedIn -->
+                        <div class="contact-card p-6 rounded-lg bg-gray-900 border border-neon-green">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-neon-green bg-opacity-20 flex items-center justify-center mr-4">
+                                    <i class="fab fa-linkedin-in text-xl text-neon-green"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-neon-green">LinkedIn</h3>
+                            </div>
+                            <a href="https://linkedin.com/in/mahad-ahmad-4351a3249" target="_blank" class="text-white hover:text-neon-blue">linkedin.com/in/mahad-ahmad-4351a3249</a>
+                        </div>
+                        
+                        <!-- GitHub -->
+                        <div class="contact-card p-6 rounded-lg bg-gray-900 border border-neon-blue">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-neon-blue bg-opacity-20 flex items-center justify-center mr-4">
+                                    <i class="fab fa-github text-xl text-neon-blue"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-neon-blue">GitHub</h3>
+                            </div>
+                            <a href="https://github.com/mahmad831" target="_blank" class="text-white hover:text-neon-purple">github.com/mahmad831</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h3 class="text-xl font-bold text-neon-purple mb-4">Availability</h3>
+                        <p class="mb-4">I'm currently available for freelance projects and full-time positions. Feel free to reach out for collaborations or just to say hello!</p>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-neon-green mr-2 animate-pulse"></div>
+                            <span class="text-neon-green">Available for new opportunities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-10 bg-black border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="terminal mb-6 md:mb-0">
+                    <div class="terminal-text pl-6">Made by Mahad Ahmad | Powered by AI</div>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/mahmad831" target="_blank" class="text-gray-400 hover:text-neon-blue text-2xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/mahad-ahmad-4351a3249" target="_blank" class="text-gray-400 hover:text-neon-blue text-2xl">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:mahadahmad832@gmail.com" class="text-gray-400 hover:text-neon-blue text-2xl">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-6 text-center text-gray-500 text-sm">
+                Last updated: June 2024
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple scroll animation for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Glitch effect on hover for certain elements
+        const glitchElements = document.querySelectorAll('.glitch-hover');
+        glitchElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.classList.add('glitch');
+                el.setAttribute('data-text', el.textContent);
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                el.classList.remove('glitch');
+            });
+        });
+        
+        // Animate progress rings
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressElements = document.querySelectorAll('.progress-ring-circle');
+            progressElements.forEach(el => {
+                const radius = el.r.baseVal.value;
+                const circumference = 2 * Math.PI * radius;
+                const offset = circumference - (el.dataset.progress / 100) * circumference;
+                el.style.strokeDasharray = `${circumference} ${circumference}`;
+                el.style.strokeDashoffset = offset;
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=mahad831/postfolio-space" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
